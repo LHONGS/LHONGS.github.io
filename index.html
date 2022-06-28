@@ -1,10 +1,320 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        body,html{
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
 
+}
+
+.back-tag{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.back-left{
+    color: darkgrey;
+    width: 550px;
+    height: 550px;
+    position: absolute;
+    left: -210px;
+    bottom: -130px;
+}
+
+.back-right{
+    color: darkgrey;
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    right: -80px;
+    top: -80px;
+}
+.expage{
+    position: absolute;
+    top: 17%;
+    left: 20%;
+}
+
+.page{
+    overflow: hidden;      /* 左侧部分显示圆角，设置overflow，整个大部分外面再包一层div设置relative */
+    border-radius: 20px;
+    width: 900px;
+    height: 500px;
+    background-color: #fff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0,0.1);
+    position:relative;
+    margin: 0 auto;
+    display: flex;
+
+}
+.top-tag{
+    position: absolute;
+    top: -40px;
+    left: 31%;
+    width: 110px;
+    z-index: 9;
+    mix-blend-mode: soft-light;
+}
+.leftpage{
+    flex: 1;
+    background-image: linear-gradient(to bottom right, rgb(198, 52, 4), rgba(115, 11, 201, 0.788));
+    position: relative;
+    color: #fff;
+}
+.leftpage:hover{
+    background-image: linear-gradient(to bottom right, rgb(38, 230, 41), rgba(23, 190, 251, 0.788));
+}
+.inleftpage{
+    padding: 60px;
+}
+
+.inleftpag h1{
+    font-weight: 800;
+}
+
+#solit{
+    font-weight: 200;
+}
+p{
+    font-weight: lighter;
+    font-size: 18px;
+}
+.rightpage{
+    flex: 1;
+    position: relative;
+    text-align: center;
+}
+
+
+.bottom-tag{
+    position: absolute;
+    right: -43px;
+    width: 120px;
+    height: auto;
+    bottom: 20px;
+
+}
+
+.bottom-end{
+    position: absolute;
+    bottom: 10px;
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+    color: #aaa;
+
+}
+
+.inner{
+    margin: 18% 25% 0% 25%;
+}
+
+.inner .user label{
+    width: 100%;
+    background-color: #fff;
+    padding: 0 4px;
+    font-size: 14px;
+    color: #666;
+    line-height: 2;
+    bottom: -14px;
+    position: relative;
+}
+.inner .user input{
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    border:1px solid #ddd;
+    background-color: #FFFFFF;
+    text-align: center;
+    font-size: 14px;
+}
+.inner .password label{
+    width: 100%;
+    background-color: #fff;
+    padding: 0 4px;
+    font-size: 14px;
+    color: #666;
+    line-height: 2;
+    bottom: -14px;
+    position: relative;
+}
+.inner .password input{
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    border:1px solid #ddd;
+    background-color: #FFFFFF;
+    text-align: center;
+    font-size: 14px;
+}
+.inner .user input::placeholder{
+    color: #aaa;
+}
+.inner .password input::placeholder{
+    color: #aaa;
+}
+.inner .user input:focus{
+    outline:none;
+    border:1px solid rgba(115, 11, 201, 0.788);
+}
+.inner .password input:focus{
+    outline:none;
+    border:1px solid rgba(115, 11, 201, 0.788);
+}
+#yes{
+    border-color: rgba(161, 106, 206, 0.788);
+    width: 100%;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 15px;
+    font-size: 14px;
+    box-shadow: 0 4px 12px 0 rgba(161, 106, 206, 0.788);
+    color: #FFFFFF;
+    letter-spacing: 0.4px;
+    background-color: rgba(127, 34, 202, 0.788);
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.28);
+}
+#yes:hover{
+    background: rgba(23, 190, 251, 0.788);
+}
+.inner .rememberuser,.rememberpassword{
+    font-size: 13px;
+    color: #aaa;
+    text-align: left;
+    line-height: 20px;
+    margin-bottom: 4px;
+}
+.rememberuser{
+margin-top: 10px;
+}
+.rememberpassword{
+margin-bottom: 25px;
+}
+
+.inner .rememberuser input{
+    margin: 4px;
+    height: 16px;
+    float: left;
+    width: auto;
+}
+.inner .rememberpassword input{
+    margin: 4px;
+    height: 16px;
+    float: left;
+    width: auto;
+}
+
+
+.forget{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    left:0;
+    font-size:14px;
+    color: #aaa;
+}
+.forget:hover{
+    color: rgba(55, 3, 98, 0.788);
+}
+a{
+    text-decoration: none;
+}
+
+a,div,button,input{
+    transition: 0.3s all ease-in-out;
+}
+    </style>
 </head>
 <body>
+    <div class="back">
+        <div class="back-tag">
+            <img  class="back-left" src="./img/left-half-circular.png" alt="" >
+            <img class="back-right" src="./img/right-half-circular.png" alt="" >
+        </div>
+        <div class="expage">
+            <div class="layui-anim layui-anim-scale">
+                <img class="top-tag" src="./img/top-tag.png" alt=""> 
+            </div>
+           
+            <div class="page">
+                
+                <div class="leftpage">
+                    <div class="inleftpage">
+                    <h3>Welcome to</h3>
+                    <h1>USER <span id="solit">platform</span> </h1><br>
+                    <p>
+                        Web page has prepared different login pages for users of different ranks and identities. Log into the system with your username and password. The default administrator account is "admin" (both for username and password).
+                    </p>
+                    <img class="bottom-tag" src="./img/earth.png" alt="">
+                    </div>
+                </div>
+                <div class="rightpage">
+                    <div class="inner">
+                        <h1>log in</h1>
+                        <form action="">
+                            <div class="user">
+                                <label for="username">USERNAME</label>
+                                <input id="usernam" type="text" placeholder="enter Username" name="" id="">
+                            </div>
+                            <div class="password">
+                                <label for="password">PASSWORD</label>
+                                <input id="password" type="password" placeholder="enter password" name="" id="">
+                            </div>
+                            <div class="rememberuser">
+                                <input type="checkbox" name="" id="">remember account 
+                            </div>
+                            <div class="rememberpassword">
+                                <input type="checkbox" name="" id="">remember password
+                            </div>
+                            <button id="yes">login</button>
+                            
+                        </form>
+                    </div>
+                    <a class="forget" href="####">forget password?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-end">
+        © 2022 TPN Platform
+    </div>
     
- 重定向，meta标签中设置网页定时跳转，
-
 </body>
+
+<script>
+    window.onload = function () {
+    var left = document.querySelector('.back-left');
+    left.addEventListener('mouseover', function () {
+        left.src = "./img/left-tag.png";
+    });
+    left.addEventListener('mouseout', function () {
+        left.src = "./img/left-half-circular.png";
+    });
+
+    var right = document.querySelector('.back-right');
+    right.addEventListener('mouseover', function () {
+        right.src = "./img/right-tag.png";
+    });
+    right.addEventListener('mouseout', function () {
+        right.src = "./img/right-half-circular.png";
+    });
+
+    var forget = document.querySelector('.forget');
+    forget.addEventListener('click', function () {
+        alert("请联系管理员重置！")
+    });
+}
+
+</script>
 </html>
